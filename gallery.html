@@ -96,10 +96,18 @@
       <a href="pricing.html" data-nav>Pricing Guide</a>
       <a href="contact.html" data-nav>Contact</a>
       <div class="drawer-divider"></div>
+      <button type="button" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:0.5rem;" data-modal-open="estimate-modal">Free 3D Estimate</button>
       <a href="tel:+919820012345" class="drawer-link" style="color:var(--accent); font-weight:600; text-align:center;">📞 Call: +91 98200 12345</a>
-      <button type="button" class="drawer-link" data-modal-open="estimate-modal">Free 3D Estimate</button>
-      <button type="button" class="drawer-link" data-theme-toggle>Theme Toggle</button>
-      <button type="button" class="drawer-link" data-rtl-toggle>RTL / LTR Mode</button>
+      <div class="drawer-toggle-row">
+        <button type="button" class="drawer-toggle-btn" data-theme-toggle aria-label="Toggle Theme">
+          <span data-theme-icon></span>
+          <span>Theme</span>
+        </button>
+        <button type="button" class="drawer-toggle-btn" data-rtl-toggle aria-label="Toggle RTL or LTR">
+          <span data-rtl-icon></span>
+          <span data-rtl-label>RTL</span>
+        </button>
+      </div>
     </nav>
   </div>
 
