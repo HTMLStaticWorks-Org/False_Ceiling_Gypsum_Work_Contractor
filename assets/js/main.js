@@ -4,6 +4,10 @@
   const STORAGE_THEME = 'vertex-theme';
   const STORAGE_RTL = 'vertex-rtl';
 
+  const MOON_ICON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  const SUN_ICON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  const RTL_ICON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><path d="M4 8h16M16 4l4 4-4 4"/><path d="M20 16H4M8 12l-4 4 4 4"/></svg>';
+
   function initTheme() {
     const saved = localStorage.getItem(STORAGE_THEME);
     if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
@@ -25,9 +29,12 @@
   function updateThemeIcon() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     document.querySelectorAll('[data-theme-icon]').forEach((el) => {
-      el.innerHTML = isDark
-        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      el.innerHTML = isDark ? SUN_ICON_SVG : MOON_ICON_SVG;
+    });
+    document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+      btn.setAttribute('title', isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme');
+      btn.setAttribute('aria-label', isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme');
+      btn.classList.toggle('active', isDark);
     });
   }
 
@@ -47,8 +54,16 @@
 
   function updateRtlLabel() {
     const rtl = document.documentElement.getAttribute('dir') === 'rtl';
+    document.querySelectorAll('[data-rtl-icon]').forEach((el) => {
+      el.innerHTML = RTL_ICON_SVG;
+    });
     document.querySelectorAll('[data-rtl-label]').forEach((el) => {
-      el.textContent = rtl ? 'LTR' : 'RTL';
+      el.textContent = rtl ? 'LTR Mode' : 'RTL Mode';
+    });
+    document.querySelectorAll('[data-rtl-toggle]').forEach((btn) => {
+      btn.setAttribute('title', rtl ? 'Switch to Left-to-Right (LTR)' : 'Switch to Right-to-Left (RTL)');
+      btn.setAttribute('aria-label', rtl ? 'Switch to Left-to-Right (LTR)' : 'Switch to Right-to-Left (RTL)');
+      btn.classList.toggle('active', rtl);
     });
   }
 

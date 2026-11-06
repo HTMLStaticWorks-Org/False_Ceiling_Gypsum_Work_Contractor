@@ -303,24 +303,46 @@ textarea {
 }
 
 .icon-btn {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 4px;
   background: var(--bg-elevated);
   cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: border-color var(--transition), background var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--text-primary);
+  transition: all var(--transition);
+  flex-shrink: 0;
 }
 
 .icon-btn:hover {
   border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.icon-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .icon-btn svg {
   width: 18px;
   height: 18px;
+  display: block;
+}
+
+[data-theme='dark'] .icon-btn {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .icon-btn:hover {
+  border-color: var(--accent);
+  background: rgba(184, 115, 51, 0.15);
 }
 
 .nav-cta {
