@@ -434,7 +434,7 @@ textarea {
   width: min(340px, 88vw);
   background: var(--bg-elevated);
   box-shadow: var(--shadow);
-  padding: calc(var(--nav-height) + 1rem) 1.5rem 2rem;
+  padding: 1.25rem 1.35rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -454,23 +454,172 @@ textarea {
   transform: translateX(0);
 }
 
-.drawer-panel a,
-.drawer-panel button.drawer-link {
-  padding: 0.85rem 1rem;
-  text-align: center;
-  font-weight: 500;
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.drawer-header .logo {
+  gap: 0.5rem;
+}
+
+.drawer-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--transition);
+  padding: 0;
+}
+
+.drawer-close-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Drawer Dropdown for Home Page */
+.drawer-dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.drawer-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  border: none;
-  background: none;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.drawer-dropdown-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.drawer-dropdown-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.drawer-dropdown-btn .drawer-chevron {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition);
+}
+
+.drawer-dropdown-btn.open .drawer-chevron {
+  transform: rotate(180deg);
+}
+
+.drawer-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.4rem 0 0.4rem 0.6rem;
+}
+
+.drawer-dropdown-menu.open {
+  display: flex;
+}
+
+[dir='rtl'] .drawer-dropdown-menu {
+  padding: 0.4rem 0.6rem 0.4rem 0;
+}
+
+.drawer-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem !important;
+  font-size: 0.86rem !important;
+  color: var(--text-secondary) !important;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.drawer-dropdown-item:hover {
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  background: var(--accent-soft) !important;
+}
+
+.drawer-panel a.drawer-nav-link {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
   width: 100%;
   cursor: pointer;
   color: var(--text-primary);
   display: block;
+  text-decoration: none;
+  transition: all var(--transition);
 }
 
-.drawer-panel a:hover,
-.drawer-panel button.drawer-link:hover {
+[dir='rtl'] .drawer-panel a.drawer-nav-link {
+  text-align: right;
+}
+
+.drawer-panel a.drawer-nav-link:hover {
   background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Active Highlight for BOTH Light & Dark Theme */
+.drawer-panel a[data-nav].active,
+.drawer-dropdown-item.active {
+  background: var(--accent) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-color: var(--accent) !important;
+}
+
+.drawer-panel a[data-nav].active .dropdown-item-badge,
+.drawer-dropdown-item.active .dropdown-item-badge {
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: #fff !important;
+}
+
+[data-theme='dark'] .drawer-panel a[data-nav].active,
+[data-theme='dark'] .drawer-dropdown-item.active {
+  background: var(--accent) !important;
+  color: #1c1916 !important;
+  font-weight: 700 !important;
+  border-color: var(--accent) !important;
+}
+
+[data-theme='dark'] .drawer-panel a[data-nav].active .dropdown-item-badge,
+[data-theme='dark'] .drawer-dropdown-item.active .dropdown-item-badge {
+  background: rgba(0, 0, 0, 0.3) !important;
+  color: #1c1916 !important;
 }
 
 .drawer-divider {
@@ -1864,20 +2013,15 @@ textarea {
 }
 
 @media (max-width: 1024px) {
-  .nav-desktop {
+  .nav-desktop,
+  .nav-actions .icon-btn,
+  .nav-actions .nav-cta-desktop {
     display: none !important;
   }
 
   .nav-actions {
     display: flex !important;
     align-items: center !important;
-    gap: 0.45rem !important;
-  }
-
-  .nav-actions .icon-btn {
-    display: inline-flex !important;
-    width: 38px;
-    height: 38px;
   }
 
   .hamburger {
@@ -1933,13 +2077,43 @@ textarea {
     text-align: center;
   }
 
-  .footer-brand .logo {
-    justify-content: center;
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    grid-column: 1 / -1;
   }
 
+  .footer-brand .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .footer-brand p {
+    text-align: center;
+    margin: 0.85rem auto 1.25rem;
+    max-width: 38ch;
+  }
+
+  .footer-brand .social-row,
   .social-row,
   .newsletter-form {
+    display: flex;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 0.65rem;
   }
 
   .gallery-masonry {
@@ -1961,9 +2135,9 @@ textarea {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .nav-cta-desktop {
-    display: inline-flex;
+    display: inline-flex !important;
   }
 }
 
@@ -3038,6 +3212,20 @@ body.has-topbar {
   }
 }
 
+/* 1024px: Center last odd card in 2-column grids (Home 1 & Home 2) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .matrix-grid > article:last-child:nth-child(odd),
+  .matrix-grid > .matrix-card:last-child:nth-child(odd),
+  .testimonials-grid > .testimonial-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    max-width: 520px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+  }
+}
+
 @media (max-width: 768px) {
   .specs-grid {
     grid-template-columns: 1fr;
@@ -3050,6 +3238,67 @@ body.has-topbar {
   }
   .calc-chips {
     grid-template-columns: 1fr;
+  }
+
+  /* Robust Bullet Point formatting on 768px and mobile */
+  .about-list li {
+    position: relative !important;
+    display: block !important;
+    padding-left: 1.45rem !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.93rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .about-list li::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.55rem !important;
+    width: 6px !important;
+    height: 6px !important;
+    background: var(--accent) !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+  }
+
+  .about-list li strong {
+    display: inline !important;
+    color: var(--text-primary) !important;
+    margin-right: 0.35rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Home 2 Floating Hero Showcase Badge: Stack cleanly so text is never squeezed */
+  .arch-floating-badge {
+    position: static !important;
+    margin-top: 1rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+    padding: 1rem 1.15rem !important;
+    width: 100% !important;
+  }
+
+  .arch-floating-badge > div {
+    width: 100% !important;
+  }
+
+  .arch-floating-badge h4 {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .arch-floating-badge p {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .arch-floating-tag {
+    align-self: flex-start !important;
+    margin-top: 0.25rem !important;
   }
 }
 
