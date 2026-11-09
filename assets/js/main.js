@@ -389,6 +389,23 @@
     calculate();
   }
 
+  function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    const toggleBtn = () => {
+      if (window.scrollY > 350) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    };
+    window.addEventListener('scroll', toggleBtn, { passive: true });
+    toggleBtn();
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   document.querySelectorAll('[data-theme-toggle]').forEach((btn) => btn.addEventListener('click', toggleTheme));
   document.querySelectorAll('[data-rtl-toggle]').forEach((btn) => btn.addEventListener('click', toggleRtl));
 
@@ -404,4 +421,5 @@
   initGoalSelector();
   initFaqAccordion();
   initCostEstimator();
+  initBackToTop();
 })();

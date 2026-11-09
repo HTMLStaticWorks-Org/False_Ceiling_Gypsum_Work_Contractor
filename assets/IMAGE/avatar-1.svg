@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b87333"/>
+      <stop offset="100%" stop-color="#8b572a"/>
+    </linearGradient>
+  </defs>
+  <rect width="80" height="80" rx="40" fill="url(#g1)"/>
+  <!-- Couple / Homeowner silhouette & initials -->
+  <circle cx="34" cy="32" r="12" fill="#fdf8f4"/>
+  <circle cx="48" cy="30" r="10" fill="#edd6c4"/>
+  <path d="M18 64c0-9 8-16 18-16s18 7 18 16z" fill="#fdf8f4"/>
+  <path d="M38 64c0-7 6-13 14-13s14 6 14 13z" fill="#edd6c4"/>
+  <circle cx="40" cy="40" r="38" fill="none" stroke="#fff" stroke-width="2.5" opacity="0.3"/>
+</svg>

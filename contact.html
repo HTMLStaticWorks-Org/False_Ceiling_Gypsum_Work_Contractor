@@ -69,9 +69,9 @@
       </nav>
 
       <div class="nav-actions">
-        <button type="button" class="btn btn-primary btn-sm nav-cta-desktop" data-modal-open="estimate-modal">Free 3D Estimate</button>
         <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle dark/light theme" title="Toggle Theme"><span data-theme-icon></span></button>
         <button type="button" class="icon-btn" data-rtl-toggle aria-label="Toggle RTL / LTR text direction" title="Toggle RTL / LTR"><span data-rtl-icon></span></button>
+        <button type="button" class="btn btn-primary btn-sm nav-cta-desktop" data-modal-open="estimate-modal">Free 3D Estimate</button>
         <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -96,9 +96,7 @@
       <a href="pricing.html" data-nav>Pricing Guide</a>
       <a href="contact.html" class="active" data-nav>Contact</a>
       <div class="drawer-divider"></div>
-      <button type="button" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:0.5rem;" data-modal-open="estimate-modal">Free 3D Estimate</button>
-      <a href="tel:+919820012345" class="drawer-link" style="color:var(--accent); font-weight:600; text-align:center;">📞 Call: +91 98200 12345</a>
-      <div class="drawer-toggle-row">
+      <div class="drawer-toggle-row" style="margin-bottom:0.75rem;">
         <button type="button" class="drawer-toggle-btn" data-theme-toggle aria-label="Toggle Theme">
           <span data-theme-icon></span>
           <span>Theme</span>
@@ -108,6 +106,8 @@
           <span data-rtl-label>RTL</span>
         </button>
       </div>
+      <button type="button" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:0.5rem;" data-modal-open="estimate-modal">Free 3D Estimate</button>
+      <a href="tel:+919820012345" class="drawer-link" style="color:var(--accent); font-weight:600; text-align:center;">📞 Call: +91 98200 12345</a>
     </nav>
   </div>
 
@@ -328,7 +328,7 @@
 
         <div class="specialist-grid reveal">
           <div class="specialist-card">
-            <img class="specialist-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Rajesh Sharma, Chief Ceiling Engineer" />
+            <img class="specialist-avatar" src="assets/IMAGE/avatar-2.svg" alt="Rajesh Sharma, Chief Ceiling Engineer" width="70" height="70" />
             <h4>Rajesh Sharma</h4>
             <p class="specialist-role">Chief Residential Engineer</p>
             <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Specialist in luxury penthouse false ceilings, multi-tier stepped trays, and zero-crack structural jointing.</p>
@@ -336,7 +336,7 @@
           </div>
 
           <div class="specialist-card">
-            <img class="specialist-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80" alt="Priya Kulkarni, Lighting Architect" />
+            <img class="specialist-avatar" src="assets/IMAGE/avatar-3.svg" alt="Priya Kulkarni, Lighting Architect" width="70" height="70" />
             <h4>Ar. Priya Kulkarni</h4>
             <p class="specialist-role">Architectural Lighting Specialist</p>
             <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Expertise in cove Kelvin tuning, magnetic track slot planning, and DALI architectural dimming integration.</p>
@@ -344,7 +344,7 @@
           </div>
 
           <div class="specialist-card">
-            <img class="specialist-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="Arun Nair, Commercial Project Director" />
+            <img class="specialist-avatar" src="assets/IMAGE/avatar-1.svg" alt="Arun Nair, Commercial Project Director" width="70" height="70" />
             <h4>Arun Nair</h4>
             <p class="specialist-role">Commercial &amp; Acoustic Director</p>
             <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Manages large-scale corporate office grids, auditorium acoustics, fire partitions, and fast-track commercial fitouts.</p>
@@ -380,10 +380,8 @@
     <!-- Call to Action Banner -->
     <section class="cta-band">
       <div class="container cta-band-inner reveal">
-        <div>
-          <h2>Need Quick Phone Consultation Right Now?</h2>
-          <p>Our technical desk is open Monday to Saturday, 9am to 8pm. Speak with our ceiling estimator immediately.</p>
-        </div>
+        <h2>Need Quick Phone Consultation Right Now?</h2>
+        <p>Our technical desk is open Monday to Saturday, 9am to 8pm. Speak with our ceiling estimator immediately.</p>
         <a href="tel:+919820012345" class="btn btn-primary">Call Now: +91 98200 12345</a>
       </div>
     </section>
@@ -393,36 +391,46 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo">
-          <svg viewBox="0 0 64 64" width="40" height="40" fill="none" aria-hidden="true"><path d="M8 28h48v4H8z" fill="#b87333"/><path d="M20 20l24 8-24 8V20z" fill="#c4a574"/></svg>
-          <span class="logo-text"><span class="logo-name">VERTEX</span><span class="logo-tag">Ceiling &amp; Gypsum</span></span>
+        <a href="index.html" class="logo" aria-label="Vertex Ceilings home">
+          <svg viewBox="0 0 64 64" width="40" height="40" fill="none" aria-hidden="true"><rect width="64" height="64" rx="12" fill="currentColor" opacity=".08"/><path d="M8 28h48v4H8z" fill="#b87333"/><path d="M12 32h40v2H12z" fill="#8b7355" opacity=".6"/><path d="M20 20l24 8-24 8V20z" fill="#c4a574"/><circle cx="48" cy="18" r="6" fill="#b87333" opacity=".85"/></svg>
+          <span class="logo-text"><span class="logo-name">VERTEX</span><span class="logo-tag">Ceiling &amp; Gypsum Studio</span></span>
         </a>
-        <p>Premium false ceiling, gypsum POP, and architectural lighting engineering across residential and commercial sectors.</p>
+        <p>Premium false ceiling, gypsum POP, and architectural lighting engineering across luxury residences and commercial spaces.</p>
+        <div class="social-row">
+          <a href="#" class="social-link" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" class="social-link" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="social-link" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href="index.html">Home 1 (Classic)</a>
-        <a href="index-2.html">Home 2 (Architectural)</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="pricing.html">Pricing Guide</a>
+        <a href="index.html">Home 1 (Classic Turnkey)</a>
+        <a href="index-2.html">Home 2 (Architectural Studio)</a>
+        <a href="services.html">Services Deep-Dive</a>
+        <a href="gallery.html">Portfolio Gallery</a>
+        <a href="pricing.html">Pricing &amp; BOQ Guide</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html#gypsum-ceilings">Gypsum False Ceilings</a>
+        <a href="services.html#pop-design">POP Sculptural Trays</a>
+        <a href="services.html#cove-lighting">Cove &amp; Magnetic Tracks</a>
+        <a href="services.html#acoustic-grids">Acoustic Baffles &amp; Grids</a>
+        <a href="services.html#partitions">Drywall Partitions</a>
       </div>
       <div class="footer-col">
         <h4>Studio Desk</h4>
         <a href="contact.html">Contact Studio</a>
-        <a href="pricing.html#boq">Itemised BOQ</a>
-        <a href="index-2.html#calculator">Ceiling Calculator</a>
+        <a href="pricing.html#calculator">Live Cost Estimator</a>
+        <a href="pricing.html#boq">Itemised BOQ Guarantee</a>
+        <a href="tel:+919820012345">Direct: +91 98200 12345</a>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <a href="services.html#gypsum-ceilings">Gypsum False Ceiling</a>
-        <a href="services.html#pop-design">POP Sculptural Trays</a>
-        <a href="services.html#cove-lighting">Cove Lighting</a>
-      </div>
-      <div class="footer-col">
-        <h4>Newsletter</h4>
+        <h4>Stay Inspired</h4>
+        <p style="font-size:.85rem;color:var(--text-secondary);">Ceiling trends, CAD details &amp; project highlights</p>
         <form class="newsletter-form">
-          <input type="email" placeholder="Email" aria-label="Email" required />
+          <input type="email" placeholder="Email address" aria-label="Email for newsletter" required />
           <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
         </form>
         <p class="newsletter-msg" style="font-size:.8rem;margin-top:.5rem;"></p>
@@ -430,9 +438,13 @@
     </div>
     <div class="container footer-bottom">
       <span>&copy; 2026 Vertex Ceilings. All rights reserved.</span>
-      <span>Direct Site Support · Zero-Sag Certified Work</span>
+      <span>100% Itemised BOQ Guarantee · 15-Year Zero-Sag Certified Work</span>
     </div>
   </footer>
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
 
   <!-- Free Estimate Modal -->
   <div class="modal" id="estimate-modal" role="dialog" aria-labelledby="estimate-title" aria-hidden="true">

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <rect width="80" height="80" rx="40" fill="url(#g2)"/>
+  <!-- Professional male portrait silhouette -->
+  <circle cx="40" cy="30" r="14" fill="#fae8d4"/>
+  <path d="M30 26c0-6 4-11 10-11s10 5 10 11c0 2-2 3-3 3-2 0-3-1-7-1s-5 1-7 1c-1 0-3-1-3-3z" fill="#0f172a"/>
+  <!-- Shoulders with blazer -->
+  <path d="M20 64c0-10 9-18 20-18s20 8 20 18z" fill="#0f172a"/>
+  <path d="M36 46l4 8 4-8z" fill="#fae8d4"/>
+  <path d="M38 52l2 4 2-4z" fill="#b87333"/>
+  <circle cx="40" cy="40" r="38" fill="none" stroke="#fff" stroke-width="2.5" opacity="0.3"/>
+</svg>
