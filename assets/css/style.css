@@ -2126,12 +2126,85 @@ textarea {
   }
 
   .cta-band-inner {
-    flex-direction: column;
-    text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    gap: 1.25rem !important;
   }
 
-  [dir='rtl'] .cta-band-inner {
-    flex-direction: column;
+  .cta-band-inner h2,
+  .cta-band h2 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-self: center !important;
+    max-width: 24ch !important;
+  }
+
+  .cta-band-inner p,
+  .cta-band p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-self: center !important;
+    max-width: 52ch !important;
+  }
+
+  .cta-band-inner .btn,
+  .cta-band-inner a,
+  .cta-band .btn {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-self: center !important;
+  }
+
+  /* Section Headings centered properly on 768px and mobile */
+  .section-header,
+  .section-head {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .section-header .eyebrow,
+  .section-header .section-heading,
+  .section-header .section-lead,
+  .section-head .section-tag,
+  .section-head .section-title,
+  .section-head .section-subtitle,
+  .section-header p,
+  .section-head p,
+  .section-heading,
+  .section-lead,
+  .eyebrow,
+  .section-tag,
+  .section-title,
+  .section-subtitle {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  [dir='rtl'] .section-header,
+  [dir='rtl'] .section-head,
+  [dir='rtl'] .section-heading,
+  [dir='rtl'] .section-lead,
+  [dir='rtl'] .eyebrow,
+  [dir='rtl'] .cta-band-inner,
+  [dir='rtl'] .cta-band h2,
+  [dir='rtl'] .cta-band p {
+    text-align: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -3212,11 +3285,19 @@ body.has-topbar {
   }
 }
 
-/* 1024px: Center last odd card in 2-column grids (Home 1 & Home 2) */
-@media (max-width: 1024px) and (min-width: 769px) {
+/* 1024px: Center last odd card in 2-column grids (Home 1, Home 2, Gallery) */
+@media (max-width: 1024px) {
+  .matrix-grid > *:nth-child(3):last-child,
+  .matrix-grid > *:last-child:nth-child(odd),
+  .matrix-grid > article:nth-child(3):last-child,
   .matrix-grid > article:last-child:nth-child(odd),
+  .matrix-grid > .matrix-card:nth-child(3):last-child,
   .matrix-grid > .matrix-card:last-child:nth-child(odd),
-  .testimonials-grid > .testimonial-card:last-child:nth-child(odd) {
+  .testimonials-grid > *:nth-child(3):last-child,
+  .testimonials-grid > *:last-child:nth-child(odd),
+  .testimonials-grid > .testimonial-card:nth-child(3):last-child,
+  .testimonials-grid > .testimonial-card:last-child:nth-child(odd),
+  .card-center-1024 {
     grid-column: 1 / -1 !important;
     max-width: 520px !important;
     width: 100% !important;
