@@ -430,6 +430,59 @@
     });
   }
 
+  function initDesignsSlider() {
+    const scrollContainer = document.querySelector('.designs-scroll');
+    const prevBtn = document.querySelector('[data-slider-prev="designs"]');
+    const nextBtn = document.querySelector('[data-slider-next="designs"]');
+    const dotsContainer = document.querySelector('[data-slider-dots="designs"]');
+    if (!scrollContainer) return;
+
+    const cards = scrollContainer.querySelectorAll('.design-card');
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.slider-dot') : [];
+
+    const getCardWidth = () => {
+      const firstCard = cards[0];
+      if (!firstCard) return 340;
+      const style = window.getComputedStyle(scrollContainer);
+      const gap = parseFloat(style.gap) || 20;
+      return firstCard.offsetWidth + gap;
+    };
+
+    const updateControls = () => {
+      const step = getCardWidth();
+      const currentIdx = Math.round(scrollContainer.scrollLeft / step);
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === Math.min(Math.max(currentIdx, 0), cards.length - 1));
+      });
+      if (prevBtn) prevBtn.disabled = scrollContainer.scrollLeft <= 5;
+      if (nextBtn) {
+        const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        nextBtn.disabled = scrollContainer.scrollLeft >= maxScroll - 5;
+      }
+    };
+
+    prevBtn?.addEventListener('click', () => {
+      const step = getCardWidth();
+      scrollContainer.scrollBy({ left: -step, behavior: 'smooth' });
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      const step = getCardWidth();
+      scrollContainer.scrollBy({ left: step, behavior: 'smooth' });
+    });
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        const step = getCardWidth();
+        scrollContainer.scrollTo({ left: idx * step, behavior: 'smooth' });
+      });
+    });
+
+    scrollContainer.addEventListener('scroll', updateControls, { passive: true });
+    window.addEventListener('resize', updateControls, { passive: true });
+    updateControls();
+  }
+
   document.querySelectorAll('[data-theme-toggle]').forEach((btn) => btn.addEventListener('click', toggleTheme));
   document.querySelectorAll('[data-rtl-toggle]').forEach((btn) => btn.addEventListener('click', toggleRtl));
 
@@ -446,4 +499,5 @@
   initFaqAccordion();
   initCostEstimator();
   initBackToTop();
+  initDesignsSlider();
 })();
