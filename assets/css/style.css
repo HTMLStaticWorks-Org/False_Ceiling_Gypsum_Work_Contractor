@@ -811,7 +811,14 @@ textarea {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hero-actions .btn {
+  min-width: 240px;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-visual {
@@ -2340,7 +2347,8 @@ textarea {
     margin-right: auto !important;
   }
 
-  /* Home 2 Hero Section Centering on Mobile & 768px */
+  /* Home 1 & Home 2 Hero Section Centering & Equal-Size Buttons on Mobile & 768px */
+  .hero-arch-copy,
   .hero-arch-intro {
     text-align: center !important;
     display: flex !important;
@@ -2351,42 +2359,56 @@ textarea {
     width: 100% !important;
   }
 
+  .hero-arch-copy .hero-pill-badge,
   .hero-arch-intro .hero-pill-badge {
     margin-left: auto !important;
     margin-right: auto !important;
     align-self: center !important;
   }
 
+  .hero-arch-copy .display-heading,
   .hero-arch-intro .display-heading {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
+  .hero-arch-copy .section-lead,
   .hero-arch-intro .section-lead {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
+  .hero-arch-copy .hero-actions,
   .hero-arch-intro .hero-actions,
   .hero-actions {
     display: flex !important;
-    flex-wrap: wrap !important;
+    flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
     width: 100% !important;
-    gap: 0.75rem !important;
+    gap: 0.85rem !important;
   }
 
+  .hero-arch-copy .hero-actions .btn,
   .hero-arch-intro .hero-actions .btn,
   .hero-actions .btn {
-    text-align: center !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    min-width: 0 !important;
+    min-height: 48px !important;
+    display: inline-flex !important;
+    align-items: center !important;
     justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    padding: 0.85rem 1.5rem !important;
   }
 
+  .hero-arch-copy > div:last-child,
   .hero-arch-intro > div:last-child {
     justify-content: center !important;
     text-align: center !important;
@@ -2396,13 +2418,18 @@ textarea {
 }
 
 @media (max-width: 640px) {
-  .hero-arch-intro .hero-actions {
+  .hero-arch-copy .hero-actions,
+  .hero-arch-intro .hero-actions,
+  .hero-actions {
     flex-direction: column !important;
     align-items: center !important;
-  }
-  .hero-arch-intro .hero-actions .btn {
     width: 100% !important;
-    max-width: 340px !important;
+  }
+  .hero-arch-copy .hero-actions .btn,
+  .hero-arch-intro .hero-actions .btn,
+  .hero-actions .btn {
+    width: 100% !important;
+    max-width: 320px !important;
   }
 }
 
@@ -3504,6 +3531,15 @@ body.has-topbar {
     margin-left: auto !important;
     margin-right: auto !important;
     justify-self: center !important;
+  }
+}
+
+/* Gallery last card centered when alone in 3-column layout (e.g. 7 items) */
+@media (min-width: 769px) {
+  .gallery-masonry > *:nth-child(3n + 1):last-child,
+  .gallery-masonry > figure:nth-child(3n + 1):last-child,
+  .gallery-masonry > .gallery-item:nth-child(3n + 1):last-child {
+    grid-column: 2 !important;
   }
 }
 
